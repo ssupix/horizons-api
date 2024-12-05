@@ -545,9 +545,71 @@ video {
   display: none;
 }
 
+.m-auto {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-\[1920px\] {
+  max-width: 1920px;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateY( 100px );
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY( 0 );
+    opacity: 100%;
+  }
+}
+
+.animate-fade {
+  animation: fade 1s ease-in forwards;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
 body {
   margin: 0;
-  background-color: #000;
+  background-image: url('./assets/images/background-image.jpg');
 }
 
 h1 {
