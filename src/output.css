@@ -606,7 +606,7 @@ video {
 }
 
 .animate-rotation {
-  animation: rotation 5s linear infinite forwards;
+  animation: rotation 8s linear infinite forwards;
 }
 
 .flex-col {
@@ -619,10 +619,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-0 {
-  gap: 0px;
 }
 
 .p-0 {
