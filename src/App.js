@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
       m-auto
       max-w-[1920px]
     ">
+      <Header/>
       <Footer/>
     </div>
   );

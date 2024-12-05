@@ -15,7 +15,7 @@ module.exports = {
     },
     animation: {
       fade: 'fade 1s ease-in forwards',
-      rotation: 'rotation 5s linear infinite forwards',
+      rotation: 'rotation 8s linear infinite forwards',
     },
     keyframes: {
       fade: {
