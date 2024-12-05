@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -545,12 +545,20 @@ video {
   display: none;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .m-auto {
   margin: auto;
 }
 
 .flex {
   display: flex;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
 }
 
 .w-fit {
@@ -563,6 +571,20 @@ video {
 
 .max-w-\[1920px\] {
   max-width: 1920px;
+}
+
+.translate-x-\[6rem\] {
+  --tw-translate-x: 6rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-\[-6rem\] {
+  --tw-translate-y: -6rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes fade {
@@ -581,17 +603,53 @@ video {
   animation: fade 1s ease-in forwards;
 }
 
+@keyframes rotation {
+  0% {
+    transform: rotate( 0deg );
+  }
+
+  100% {
+    transform: rotate( 360deg );
+  }
+}
+
+.animate-rotation {
+  animation: rotation 8s linear infinite forwards;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
   align-items: flex-end;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-5 {
@@ -601,6 +659,14 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .opacity-0 {
