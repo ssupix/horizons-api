@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Gallery from './components/Gallery';
 import Footer from "./components/Footer";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       max-w-[1920px]
     ">
       <Header/>
+      <Gallery />
       <Footer/>
     </div>
   );

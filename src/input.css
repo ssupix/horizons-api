@@ -52,3 +52,15 @@ h6 {
     text-shadow: -1px -1px 0 #141414, 1px -1px 0 #141414, -1px 1px 0 #141414, 1px 1px 0 #141414;
     color: #FFFFFF;
 }
+
+p {
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.tag {
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    font-weight: 100;
+}
