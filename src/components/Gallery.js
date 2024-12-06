@@ -1,47 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
-const mockData = [
-    {
-        title: 'Filaments of the Vela Supernova Remnant',
-        date: '2013-10-01',
-        tags: ['Astronomy', 'Star', 'Nebula'],
-        description: 'Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet. Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. ',
-        imageUrl:
-            'https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001894/GSFC_20171208_Archive_e001894~medium.jpg',
-    },
-    {
-        title: 'Filaments of the Vela Supernova Remnant',
-        date: '2013-10-01',
-        tags: ['Astronomy', 'Star', 'Nebula'],
-        description: 'Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet. Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. ',
-        imageUrl:
-            'https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001894/GSFC_20171208_Archive_e001894~medium.jpg',
-    },
-    {
-        title: 'Filaments of the Vela Supernova Remnant',
-        date: '2013-10-01',
-        tags: ['Astronomy', 'Star', 'Nebula'],
-        description: 'Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet. Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. In aliquet urna amet aliquet.Lorem ipsum dolor sit amet consectetur. Bibendum odio in erat volutpat turpis. Gravida curabitur a metus urna. Lobortis etiam integer nisl eget dictum in consectetur tellus at. ',
-        imageUrl:
-            'https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001894/GSFC_20171208_Archive_e001894~medium.jpg',
-    },
-];
-
 const Gallery = () => {
+    const [imageData, setImageData] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch('https://api.nasa.gov/planetary/apod?api_key=dpIeEdEggyeVboW2OfzoT0gZECCTRjFLauVYOSUM&count=6')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                setImageData(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                setError(error.message);
+            });
+    }, []);
+
+    const handleLoadMore = () => {
+        fetch('https://api.nasa.gov/planetary/apod?api_key=dpIeEdEggyeVboW2OfzoT0gZECCTRjFLauVYOSUM&count=3')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setImageData(prevData => [...prevData, ...data]);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                setError(error.message);
+            });
+    };
+
     return (
         <div className="grid grid-cols-3 p-5 gap-2">
-            {mockData.map((item, index) => (
-                <Card
-                    className="col-span-1"
-                    key={index}
-                    title={item.title}
-                    date={item.date}
-                    tags={item.tags}
-                    description={item.description}
-                    imageUrl={item.imageUrl}
-                />
-            ))}
+            {imageData.length === 0 ? (
+                <p className="col-span-3 place-self-center text-white">Loading...</p>
+            ) : (
+                imageData.map((item, index) => (
+                    <Card
+                        className="col-span-1"
+                        key={index}
+                        title={item.title || "Untitled"}
+                        date={item.date || "Redacted."}
+                        explanation={item.explanation || 'No description available.'}
+                        url={item.url || ""}
+                    /> 
+                ))
+            )}
+            <button 
+                onClick={handleLoadMore} 
+                className="col-span-3 place-self-center bg-blue-500 text-white px-4 py-2 rounded"
+            >
+                Load More
+            </button>
+            {error && <p className="col-span-3 text-red-500 text-center">{error}</p>}
         </div>
     );
 };
