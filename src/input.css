@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    scrollbar-width: none;
+}
+
 body {
     margin: 0;
     background-image: url('./assets/images/background-image.jpg');
