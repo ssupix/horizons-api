@@ -72,3 +72,15 @@ p {
     font-size: 12px;
     font-weight: 100;
 }
+
+.button {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.link {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+}
