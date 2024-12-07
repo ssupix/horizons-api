@@ -10,9 +10,9 @@ const Card = ({ title, date, copyright, media_type, url, explanation }) => {
                     <h3 className="uppercase text-white">{title}</h3>
                     <h4 className="uppercase text-grey">{date}</h4>
                 </div>
-            <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-between p-4">
-                <div className="overflow-scroll h-full">
-                    <p className="text-white opacity-100 group-hover:opacity-100 transition-opacity duration-300 h-full flex items-center justify-center">{explanation}</p>
+            <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-between p-4 pt-20 pb-12">
+                <div className="h-full overflow-scroll">
+                    <p className="text-white opacity-100 group-hover:opacity-100 transition-opacity duration-300 h-full flex justify-center">{explanation}</p>
                 </div>
             </div>
             <div className="z-20 relative">
