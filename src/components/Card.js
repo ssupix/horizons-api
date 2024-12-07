@@ -17,7 +17,7 @@ const Card = ({ title, date, copyright, media_type, url, explanation }) => {
             </div>
             <div className="z-20 relative">
                 <div className="flex flex-row gap-2">
-                    <span className='tag text-white uppercase bg-blue px-3 py-1 rounded-full border-2 border-blue max-w-[50%] text-nowrap overflow-x-scroll'>
+                    <span className='tag text-white uppercase bg-blue px-3 py-1 rounded-full border-2 border-blue max-w-[50%] text-nowrap overflow-x-scroll mobile:max-w-[75%]'>
                         {copyright}
                     </span>
                     <span className='tag text-white uppercase bg-black px-3 py-1 rounded-full border-2 border-darkGrey'>

@@ -593,10 +593,6 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.h-\[32rem\] {
-  height: 32rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -725,21 +721,16 @@ video {
   border-radius: 0.25rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
 
-.border-2 {
-  border-width: 2px;
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+.border-2 {
+  border-width: 2px;
 }
 
 .border-blue {
@@ -752,8 +743,9 @@ video {
   border-color: rgb(30 30 30 / var(--tw-border-opacity, 1));
 }
 
-.bg-overlay {
-  background-color: rgba(0, 0, 0, 0.75);
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
 .bg-black {
@@ -764,6 +756,10 @@ video {
 .bg-blue {
   --tw-bg-opacity: 1;
   background-color: rgb(0 12 234 / var(--tw-bg-opacity, 1));
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .bg-cover {
@@ -791,6 +787,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -799,6 +800,11 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-2 {
@@ -814,16 +820,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .text-center {
@@ -877,7 +873,7 @@ body {
 
 h1 {
   font-family: Lexend Deca;
-  font-size: 150px;
+  font-size: 130px;
   font-weight: 600;
   color: #FFFFFF;
 }
@@ -935,4 +931,57 @@ p {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+@media (min-width: 425px) and (max-width: 1080px) {
+  .tablet\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .tablet\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tablet\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .tablet\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 425px) {
+  .mobile\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .mobile\:hidden {
+    display: none;
+  }
+
+  .mobile\:max-w-\[75\%\] {
+    max-width: 75%;
+  }
+
+  .mobile\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .mobile\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mobile\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .mobile\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }

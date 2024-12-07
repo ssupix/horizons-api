@@ -41,9 +41,9 @@ const Gallery = () => {
     };
 
     return (
-        <div className="grid grid-cols-3 p-5 gap-2">
+        <div className="grid grid-cols-3 p-5 gap-2 tablet:grid-cols-2 mobile:grid-cols-1">
             {imageData.length === 0 ? (
-                <p className="col-span-3 place-self-center text-white">Loading...</p>
+                <p className="col-span-3 place-self-center text-white tablet:col-span-2 mobile:col-span-1">Loading...</p>
             ) : (
                 imageData.map((item, index) => (
                     <Card
@@ -60,11 +60,11 @@ const Gallery = () => {
             )}
             <button 
                 onClick={handleLoadMore} 
-                className="col-span-3 place-self-center bg-blue-500 text-white px-4 py-2 rounded"
+                className="col-span-3 place-self-center bg-blue-500 text-white px-4 py-2 rounded tablet:col-span-2 mobile:col-span-1"
             >
                 Load More
             </button>
-            {error && <p className="col-span-3 text-red-500 text-center">{error}</p>}
+            {error && <p className="col-span-3 text-red-500 text-center tablet:col-span-2 mobile:col-span-1">{error}</p>}
         </div>
     );
 };
