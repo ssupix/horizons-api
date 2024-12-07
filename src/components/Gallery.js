@@ -60,7 +60,8 @@ const Gallery = () => {
             )}
             <button 
                 onClick={handleLoadMore} 
-                className="button col-span-3 text-center place-self-center bg-blue text-white px-12 py-2 mt-10 rounded-lg uppercase"
+                className="button col-span-3 text-center place-self-center bg-blue text-white px-12 py-2 mt-10 rounded-lg uppercase
+                            hover:bg-grey hover:text-black transition-colors duration-300"
             >
                 Load More
             </button>

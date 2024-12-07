@@ -7,7 +7,7 @@ function Footer() {
             ">
             <h5 className="w-fit text-right tablet:text-6xl mobile:text-4xl ">HORIZONS</h5>
             <h6 className="w-fit text-right tablet:text-3xl mobile:text-lg">
-                <a href="mailto:jayden.inniss.com">JAYDEN.INNISS@GMAIL.COM</a>
+                <a href="mailto:jayden.inniss.com" className="border-b border-black border-b hover:border-white transition duration-300">JAYDEN.INNISS@GMAIL.COM</a>
                 <br/>
                 778-793-5323
             </h6>
