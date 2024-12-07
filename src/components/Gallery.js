@@ -52,6 +52,7 @@ const Gallery = () => {
                         media_type={item.media_type || "Undefined"}
                         explanation={item.explanation || 'No description available.'}
                         url={item.url || ""}
+                        hdurl={item.hdurl || ""}
                     /> 
                 ))
             )}
