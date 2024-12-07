@@ -14,11 +14,9 @@ const Gallery = () => {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
                 setImageData(data);
             })
             .catch(error => {
-                console.error('Error:', error);
                 setError(error.message);
             });
     }, []);
@@ -35,7 +33,6 @@ const Gallery = () => {
                 setImageData(prevData => [...prevData, ...data]);
             })
             .catch(error => {
-                console.error('Error:', error);
                 setError(error.message);
             });
     };
@@ -61,12 +58,12 @@ const Gallery = () => {
             <button 
                 onClick={handleLoadMore} 
                 className="button col-span-3 text-center place-self-center bg-blue text-white px-12 py-2 mt-10 rounded-lg uppercase
-                            hover:bg-grey hover:text-black transition-colors duration-300"
+                            hover:bg-grey hover:text-black transition-colors duration-300 tablet:col-span-2 mobile:col-span-1"
             >
                 Load More
             </button>
-            {error && <p className="col-span-3 text-red-500 text-center">{error}</p>}
-            <h3 className='col-span-3 text-white text-center'>...</h3>
+            {error && <p className="col-span-3 text-red-500 text-center tablet:col-span-2 mobile:col-span-1">{error}</p>}
+            <h3 className='col-span-3 text-white text-center tablet:col-span-2 mobile:col-span-1'>...</h3>
         </div>
     );
 };
