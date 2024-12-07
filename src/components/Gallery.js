@@ -6,7 +6,7 @@ const Gallery = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('https://api.nasa.gov/planetary/apod?api_key=dpIeEdEggyeVboW2OfzoT0gZECCTRjFLauVYOSUM&count=6')
+        fetch('https://api.nasa.gov/planetary/apod?api_key=***REMOVED***&count=6')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -24,7 +24,7 @@ const Gallery = () => {
     }, []);
 
     const handleLoadMore = () => {
-        fetch('https://api.nasa.gov/planetary/apod?api_key=dpIeEdEggyeVboW2OfzoT0gZECCTRjFLauVYOSUM&count=3')
+        fetch('https://api.nasa.gov/planetary/apod?api_key=***REMOVED***&count=3')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
