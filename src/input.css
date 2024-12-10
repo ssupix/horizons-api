@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scrollbar-width: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-image: url('./assets/images/background-image.jpg');
+}
+
+h1 {
+    font-family: Lexend Deca;
+    font-size: 130px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: JetBrains Mono;
+    font-size: 40px;
+    font-weight: 500;
+    color: #000CEA;
+}
+
+h3 {
+    font-family: JetBrains Mono;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: -1px -1px 0 #141414, 1px -1px 0 #141414, -1px 1px 0 #141414, 1px 1px 0 #141414;
+    color: #FFFFFF;
+}
+
+h4 {
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    font-weight: 500;
+    stroke-width: 1px;
+    text-shadow: -1px -1px 0 #141414, 1px -1px 0 #141414, -1px 1px 0 #141414, 1px 1px 0 #141414;
+    color: #D9D9D9;
+}
+
+h5 {
+    font-family: Lexend Deca;
+    font-size: 96px;
+    font-weight: 600;
+    color: #000CEA;
+}
+
+h6 {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: -1px -1px 0 #141414, 1px -1px 0 #141414, -1px 1px 0 #141414, 1px 1px 0 #141414;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.tag {
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.button {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.link {
+    font-family: JetBrains Mono;
+    font-size: 24px;
+    font-weight: 500;
+}
